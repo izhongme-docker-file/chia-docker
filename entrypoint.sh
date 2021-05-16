@@ -18,6 +18,9 @@ fi
 chia plots add -d ${plots_dir}
 
 sed -i 's/localhost/127.0.0.1/g' ~/.chia/mainnet/config/config.yaml
+# 修改日志级别
+sed -i 's/WARNING/INFO/g' ~/.chia/mainnet/config/config.yaml
+
 
 if [[ ${farmer} == 'true' ]]; then
   chia start farmer-only
